@@ -1,0 +1,21 @@
+{% extends 'website/base.html' %}
+
+
+{% block content %}
+  <div class="jumbotron">
+
+    <h2>Zaloguj się: </h2>
+      <p>(jako Admin)</p>
+    {% if form.errors %}
+        <p>Nazwa użytkownika oraz hasło są nieprawidłowe. Spróbuj jeszcze raz!</p>
+    {% endif %}
+
+    <form method="POST" action="{% url 'login' %}">
+        {% csrf_token %}
+        {{form.as_p}}
+
+        <input type="submit" class='btn btn-primary' value="Zaloguj się" />
+        <input type="hidden" name="next" value="{{ next }}" />
+    </form>
+  </div>
+{% endblock %}

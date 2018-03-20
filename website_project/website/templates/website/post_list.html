@@ -1,0 +1,17 @@
+{% extends "website/base.html" %}
+{% block content %}
+<div class="centerstage">
+
+    {% for post in post_list %}
+        <div class="post">
+
+            <h1><a href="{% url 'post_detail' pk=post.pk %}">{{ post.title }}</a></h1>
+            <div class="date">
+                <p>Dodano: {{ post.published_date }}</p>
+            </div>
+            <a href="{% url 'post_detail' pk=post.pk %}">Liczba komentarzy: {{ post.approve_comments.count }}</a>
+        </div>
+    {% endfor %}
+</div>
+
+{% endblock %}
