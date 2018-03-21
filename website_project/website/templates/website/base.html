@@ -3,30 +3,33 @@
 <html>
     <head>
         <title>Jutrzenka Cegłów - oficjalna strona</title>
+
         <!-- Latest compiled and minified CSS -->
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
 
         <!-- Optional theme -->
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
 
-        <!-- Latest compiled and minified CSS -->
-        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+        <!-- jQuery -->
+        <script src="https://code.jquery.com/jquery-2.2.4.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>
 
-        <!--JS-->
+        <!-- Latest compiled and minified JavaScript -->
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+
+        <!-- Medium Editor -->
         <script src="//cdn.jsdelivr.net/npm/medium-editor@latest/dist/js/medium-editor.min.js"></script>
         <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/medium-editor@latest/dist/css/medium-editor.min.css" type="text/css" media="screen" charset="utf-8">
 
-        <!--CSS-->
+        <!-- CSS -->
         <link rel="stylesheet" href="{% static 'css/website.css' %}">
 
-        <!--FONTS-->
+        <!-- Fonts -->
         <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet">
 
 
 <body>
-
     <div class="page-header">
-        <h1><img src="{% static 'img/logo.png' %}" alt="logo"> Jutrzenka Cegłów</h1>
+        <h1><a href="{% url 'post_list' %}"><img src="{% static 'img/logo.png' %}" alt="logo"> Jutrzenka Cegłów</a></h1>
     </div>
 
     <nav class="navbar navbar-default menu">
@@ -45,20 +48,20 @@
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                 <ul class="nav navbar-nav">
                     <li><a href="{% url 'post_list' %}">Strona główna</a></li>
-                    <li><a href="#">Kadra</a></li>
+                    <li><a href="{% url 'squad' %}">Kadra</a></li>
                     <li class="dropdown">
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Sezon <span class="caret"></span></a>
-                        <ul class="dropdown-menu">
+                        <ul class="dropdown-menu dropdown">
                             <li><a href="#">Terminarz i wyniki rozgrywek</a></li>
-                            <li role="separator" class="divider"></li>
+                            <!--<li role="separator" class="divider"></li>-->
                             <li><a href="#">Tabela</a></li>
-                            <li role="separator" class="divider"></li>
+                            <!--<li role="separator" class="divider"></li>-->
                             <li><a href="#">Statystyki zawodników</a></li>
                         </ul>
                     </li>
-                    <li><a href="#">Galeria</a></li>
-                    <li><a href="#">O klubie</a></li>
-                    <li><a href="#">Kontakt</a></li>
+                    <li><a href="{% url 'gallery' %}">Galeria</a></li>
+                    <li><a href="{% url 'about' %}">O klubie</a></li>
+                    <li><a href="{% url 'contact' %}">Kontakt</a></li>
                 </ul>
 
                 <ul class="nav navbar-nav navbar-right">
@@ -69,7 +72,6 @@
                     <li>
                         <a href="{% url 'post_new' %}" >Nowy post</a>
                     </li>
-
                     <li>
                         <a href="{% url 'post_draft_list' %}">Wersje robocze</a>
                     </li>
@@ -100,6 +102,34 @@
                 </div>
 
             </div>
+            <!--ręcznie wrzucony sidebar, dla podglądu-->
+            <!--<div class="col-md-4 rightbar">-->
+                <!--<div>-->
+                    <!--<h3>Poprzedni mecz</h3>-->
+                    <!--<p>Drużyna1 : Drużyna2</p>-->
+                    <!--<h3>Następny mecz</h3>-->
+                    <!--<p>Drużyna2 : Drużyna 3</p>-->
+                    <!--<table>-->
+                        <!--<tr>-->
+                            <!--<th>Pozycja</th>-->
+                            <!--<th>Drużyna</th>-->
+                            <!--<th>Mecze</th>-->
+                            <!--<th>Gole(+)</th>-->
+                            <!--<th>Gole(-)</th>-->
+                            <!--<th>Punkty</th>-->
+                        <!--</tr>-->
+                        <!--<tr>-->
+                            <!--<td>1</td>-->
+                            <!--<td>Team1</td>-->
+                            <!--<td>20</td>-->
+                            <!--<td>50</td>-->
+                            <!--<td>20</td>-->
+                            <!--<td>50</td>-->
+                        <!--</tr>-->
+                    <!--</table>-->
+                <!--</div>-->
+
+            <!--</div>-->
         </div>
     </div>
 

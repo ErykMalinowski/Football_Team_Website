@@ -1,6 +1,6 @@
 {% extends "website/base.html" %}
 {% block content %}
-<div class="centerstage">
+<div class="homepage">
 
     {% for post in post_list %}
         <div class="post">
@@ -9,7 +9,11 @@
             <div class="date">
                 <p>Dodano: {{ post.published_date }}</p>
             </div>
-            <a href="{% url 'post_detail' pk=post.pk %}">Liczba komentarzy: {{ post.approve_comments.count }}</a>
+            <div>
+                <p class="postcontent">{{ post.text|safe|truncatechars:500 }}</p>
+            </div>
+
+            <a href="{% url 'post_detail' pk=post.pk %}" class="comment">Liczba komentarzy: {{ post.approve_comments.count }}</a>
         </div>
     {% endfor %}
 </div>

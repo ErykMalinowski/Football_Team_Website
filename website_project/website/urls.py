@@ -4,7 +4,10 @@ from . import views
 
 urlpatterns = [
     url(r'^$', views.PostListView.as_view(), name='post_list'),
+    url(r'^squad/$', views.SquadView.as_view(), name='squad'),
+    url(r'^gallery/$', views.GalleryView.as_view(), name='gallery'),
     url(r'^about/$', views.AboutView.as_view(), name='about'),
+    url(r'^contact/$', views.ContactView.as_view(), name='contact'),
     url(r'^post/(?P<pk>\d+)/$', views.PostDetailView.as_view(), name='post_detail'),
     url(r'^post/new/$', views.CreatePostView.as_view(), name='post_new'),
     url(r'^post/(?P<pk>\d+)/edit/$', views.PostEditView.as_view(), name='post_edit'),

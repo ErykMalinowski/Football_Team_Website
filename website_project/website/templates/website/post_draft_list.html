@@ -1,11 +1,11 @@
 {% extends "website/base.html" %}
 {% block content %}
 
-{% for post in posts %}
+{% for post in post_list %}
     <div class="post">
-        <p class="date">Utworzono: {{ post.created_date|date:'D M Y' }}</p>
         <h1><a href="{% url 'post_detail' pk=post.pk %}">{{ post.title }}</a></h1>
-        <p>{{ post.text|truncatechars:200 }}</p>
+        <p class="date">Utworzono: {{ post.created_date }}</p>
+        <p class="postcontent">{{ post.text|safe|truncatechars:250 }}</p>
     </div>
-
+{% endfor %}
 {% endblock %}

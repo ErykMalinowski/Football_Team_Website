@@ -13,6 +13,18 @@ class AboutView(TemplateView):
     template_name = 'about.html'
 
 
+class SquadView(TemplateView):
+    template_name = 'squad.html'
+
+
+class GalleryView(TemplateView):
+    template_name = 'gallery.html'
+
+
+class ContactView(TemplateView):
+    template_name = 'contact.html'
+
+
 class PostListView(ListView):
     model = Post
 
@@ -45,6 +57,7 @@ class PostEditView(LoginRequiredMixin, UpdateView):
 class DraftListView(LoginRequiredMixin, ListView):
     login_url = '/login/'
     redirect_field_name = 'website/post_list.html'
+    template_name = 'website/post_draft_list.html'
 
     model = Post
 
