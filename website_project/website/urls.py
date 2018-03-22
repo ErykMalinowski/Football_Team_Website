@@ -17,4 +17,5 @@ urlpatterns = [
     url(r'^post/(?P<pk>\d+)/comment/$', views.add_comment, name='add_comment'),
     url(r'^comment/(?P<pk>\d+)/approve/$', views.approve_comment, name='approve_comment'),
     url(r'^comment/(?P<pk>\d+)/delete/$', views.delete_comment, name='delete_comment'),
+    url(r'^matches/$', views.MatchesView.as_view(), name='matches'),
 ]

@@ -122,15 +122,6 @@
     font-size: 3em;
 }
 
-.rightbar{
-    margin-left: 75px;
-    margin-right: -75px;
-    background-color: #082c50;
-    height: 100%;
-    font-family: 'Lato', sans-serif;
-    color: white;
-}
-
 p{
     text-align: justify;
 }
@@ -167,8 +158,19 @@ p{
     text-align: center;
 }
 
+.matches{
+    font-size: 1.5em;
+    margin-bottom: 10px;
+}
 
-
+/*.rightbar{*/
+    /*margin-left: 75px;*/
+    /*margin-right: -75px;*/
+    /*background-color: #082c50;*/
+    /*height: 100%;*/
+    /*font-family: 'Lato', sans-serif;*/
+    /*color: white;*/
+/*}*/
 
 /*.footer-style {*/
     /*position: absolute;*/

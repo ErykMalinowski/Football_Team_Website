@@ -48,10 +48,16 @@ class Season(models.Model):
     end_year = models.PositiveSmallIntegerField()
     is_active = models.BooleanField(default=True)
 
+    def __str__(self):
+        return self.name
+
 
 class Round(models.Model):
     name = models.CharField(max_length=32)
     season = models.ForeignKey(Season, on_delete=models.CASCADE)
+
+    def __str__(self):
+        return self.name
 
 
 class Team(models.Model):
@@ -70,6 +76,9 @@ class Match(models.Model):
     score_home = models.PositiveSmallIntegerField()
     score_away = models.PositiveSmallIntegerField()
     round = models.ForeignKey(Round, on_delete=models.CASCADE)
+
+    def __str__(self):
+        return self.team_home.name + "-" + self.team_away.name + " " + str(self.score_home) + ":" + str(self.score_away)
 
 
 class TeamSeason(models.Model):

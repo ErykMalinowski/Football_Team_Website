@@ -5,7 +5,7 @@ from django.urls import reverse_lazy
 from django.utils import timezone
 from django.views.generic import TemplateView, ListView, DetailView, CreateView, UpdateView, DeleteView
 
-from .models import Post, Comment, Player, TeamSeason
+from .models import Post, Comment, Player, Match
 from .forms import PostForm, CommentForm
 
 
@@ -110,8 +110,8 @@ class SquadView(ListView):
         return Player.objects.all().order_by('number')
 
 
-class RightBarView(ListView):
-    model = TeamSeason
+class MatchesView(ListView):
+    model = Match
 
     def get_queryset(self):
-        return TeamSeason.objects.all()
+        return Match.objects.all()
