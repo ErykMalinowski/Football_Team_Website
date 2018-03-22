@@ -5,24 +5,8 @@ from django.urls import reverse_lazy
 from django.utils import timezone
 from django.views.generic import TemplateView, ListView, DetailView, CreateView, UpdateView, DeleteView
 
-from .models import Post, Comment
+from .models import Post, Comment, Player, TeamSeason
 from .forms import PostForm, CommentForm
-
-
-class AboutView(TemplateView):
-    template_name = 'about.html'
-
-
-class SquadView(TemplateView):
-    template_name = 'squad.html'
-
-
-class GalleryView(TemplateView):
-    template_name = 'gallery.html'
-
-
-class ContactView(TemplateView):
-    template_name = 'contact.html'
 
 
 class PostListView(ListView):
@@ -106,3 +90,28 @@ def delete_comment(request, pk):
     comment.delete()
     return redirect('post_detail', pk=post_pk)
 
+
+class AboutView(TemplateView):
+    template_name = 'about.html'
+
+
+class GalleryView(TemplateView):
+    template_name = 'gallery.html'
+
+
+class ContactView(TemplateView):
+    template_name = 'contact.html'
+
+
+class SquadView(ListView):
+    model = Player
+
+    def get_queryset(self):
+        return Player.objects.all().order_by('number')
+
+
+class RightBarView(ListView):
+    model = TeamSeason
+
+    def get_queryset(self):
+        return TeamSeason.objects.all()

@@ -1,0 +1,53 @@
+{% extends "website/base.html" %}
+{% block content %}
+
+<h1 class="squad-h1">Kadra w sezonie 2017/18</h1>
+<h2 class="squad-h2">Bramkarze:</h2>
+
+{% for player in player_list %}
+    {% if player.position == 'bramkarz' %}
+        <div class="post squad">
+            <div>
+                <p>#{{ player.number }} {{ player.name }} {{ player.surname }}</p>
+            </div>
+        </div>
+    {% endif %}
+{% endfor %}
+
+<h2 class="squad-h2">Obrońcy:</h2>
+
+{% for player in player_list %}
+    {% if player.position == 'obrońca' %}
+        <div class="post squad">
+            <div>
+                <p>#{{ player.number }} {{ player.name }} {{ player.surname }}</p>
+            </div>
+        </div>
+    {% endif %}
+{% endfor %}
+
+<h2 class="squad-h2">Pomocnicy:</h2>
+
+{% for player in player_list %}
+    {% if player.position == 'pomocnik' %}
+        <div class="post squad">
+            <div>
+                <p>#{{ player.number }} {{ player.name }} {{ player.surname }}</p>
+            </div>
+        </div>
+    {% endif %}
+{% endfor %}
+
+<h2 class="squad-h2">Napastnicy:</h2>
+
+{% for player in player_list %}
+    {% if player.position == 'napastnik' %}
+        <div class="post squad">
+            <div>
+                <p>#{{ player.number }} {{ player.name }} {{ player.surname }}</p>
+            </div>
+        </div>
+    {% endif %}
+{% endfor %}
+
+{% endblock %}

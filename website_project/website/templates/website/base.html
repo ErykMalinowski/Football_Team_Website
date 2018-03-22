@@ -15,6 +15,7 @@
 
         <!-- Latest compiled and minified JavaScript -->
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.8/css/all.css" integrity="sha384-3AB7yXWz4OeoZcPbieVW64vVXEwADiYyAEhwilzWsLw+9FgqpyjjStpPnpBO8o8S" crossorigin="anonymous">
 
         <!-- Medium Editor -->
         <script src="//cdn.jsdelivr.net/npm/medium-editor@latest/dist/js/medium-editor.min.js"></script>
@@ -102,38 +103,29 @@
                 </div>
 
             </div>
-            <!--ręcznie wrzucony sidebar, dla podglądu-->
-            <!--<div class="col-md-4 rightbar">-->
-                <!--<div>-->
-                    <!--<h3>Poprzedni mecz</h3>-->
-                    <!--<p>Drużyna1 : Drużyna2</p>-->
-                    <!--<h3>Następny mecz</h3>-->
-                    <!--<p>Drużyna2 : Drużyna 3</p>-->
-                    <!--<table>-->
-                        <!--<tr>-->
-                            <!--<th>Pozycja</th>-->
-                            <!--<th>Drużyna</th>-->
-                            <!--<th>Mecze</th>-->
-                            <!--<th>Gole(+)</th>-->
-                            <!--<th>Gole(-)</th>-->
-                            <!--<th>Punkty</th>-->
-                        <!--</tr>-->
-                        <!--<tr>-->
-                            <!--<td>1</td>-->
-                            <!--<td>Team1</td>-->
-                            <!--<td>20</td>-->
-                            <!--<td>50</td>-->
-                            <!--<td>20</td>-->
-                            <!--<td>50</td>-->
-                        <!--</tr>-->
-                    <!--</table>-->
-                <!--</div>-->
+            <div class="col-md-4 rightbar">
+                <div>
+                {% block table %}
 
-            <!--</div>-->
+                {% endblock %}
+                </div>
+
+            </div>
         </div>
     </div>
 
+    <!--<footer class="footer-style">-->
+        <!--<div class="container">-->
+            <!--<span class="text-muted">jutrzenkaceglow.pl &copy; 2018 Wszelkie prawa zastrzeżone. Projekt i realizacja: Eryk Malinowski-->
+                 <!--<a href="https://github.com/ErykMalinowski" target="_blank"><i class="fab fa-github fa-lg"></i></a>-->
+                 <!--<a href="https://pl.linkedin.com/" target="_blank"><i class="fab fa-linkedin fa-lg"></i></a>-->
+                 <!--<a href="https://www.codewars.com/users/ErykMalinowski" target="_blank"><img src="{% static 'img/codewars.png' %}"></a>-->
+            <!--</span>-->
+        <!--</div>-->
+    <!--</footer>-->
 
+
+<a href="#"><img src="{% static 'img/scrollup.png' %}" class="scroll-top"></a>
 
 
 <script type="text/javascript" src="{% static 'js/website.js' %}"></script>

@@ -2,7 +2,6 @@
     font-family: 'Lato', sans-serif;
     font-size: 1.5em;
     color: #fff;
-    margin-bottom: -1px;
     background-image: none;
     background-color: #d32f2f;
 
@@ -97,11 +96,6 @@
     font-size: 0.75em;
 }
 
-.postcontent{
-    font-size: 1em;
-    text-align: justify;
-}
-
 .comment{
     font-weight: 700;
 }
@@ -115,11 +109,17 @@
     font-family: 'Lato', sans-serif;
     text-align: center;
     border-bottom:none;
+    padding: 0;
 }
 
 .page-header a{
     text-decoration: none;
     color: black;
+}
+
+.page-header h1{
+    font-weight: 700;
+    font-size: 3em;
 }
 
 .rightbar{
@@ -130,3 +130,74 @@
     font-family: 'Lato', sans-serif;
     color: white;
 }
+
+p{
+    text-align: justify;
+}
+
+.scroll-top {
+    width: 70px;
+    height: 70px;
+    position: fixed;
+    bottom: 35px;
+    right: 35px;
+    display: none;
+}
+
+.menu-h{
+    font-weight: 700;
+}
+
+.menu-h-gallery{
+    font-weight: 700;
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.squad{
+    font-size: 1.5em;
+    margin-bottom: 10px;
+    word-spacing: 5px;
+    text-align: center;
+    margin-left: 100px;
+}
+
+.squad-h1, .squad-h2{
+    font-weight: 700;
+    text-align: center;
+}
+
+
+
+
+/*.footer-style {*/
+    /*position: absolute;*/
+    /*bottom: 0;*/
+    /*width: 100%;*/
+    /*!* Set the fixed height of the footer here *!*/
+    /*height: 60px;*/
+    /*line-height: 60px; !* Vertically center the text there *!*/
+    /*background-color: #d32f2f;*/
+/*}*/
+
+/*html{*/
+    /*position:relative;*/
+    /*min-height: 100%;*/
+/*}*/
+
+/*.text-muted{*/
+    /*color: white;*/
+    /*font-family: 'Lato', sans-serif;*/
+    /*font-size: 1.25em;*/
+    /*letter-spacing: 1px;*/
+/*}*/
+
+/*.text-muted a{*/
+    /*margin-left: 2px;*/
+    /*margin-right: 2px;*/
+/*}*/
+
+/*.text-muted a img{*/
+    /*margin-bottom: 5px;*/
+/*}*/
+

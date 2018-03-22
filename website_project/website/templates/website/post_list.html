@@ -10,7 +10,7 @@
                 <p>Dodano: {{ post.published_date }}</p>
             </div>
             <div>
-                <p class="postcontent">{{ post.text|safe|truncatechars:500 }}</p>
+                <p>{{ post.text|safe|truncatechars:500 }}</p>
             </div>
 
             <a href="{% url 'post_detail' pk=post.pk %}" class="comment">Liczba komentarzy: {{ post.approve_comments.count }}</a>
