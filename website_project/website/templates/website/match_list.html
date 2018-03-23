@@ -8,9 +8,15 @@
     <h2>{{ round.grouper.name }}</h2>
     <div class="post matches">
         {% for match in round.list %}
-        <div>
-            <p>{{ match.team_home }} <img src="{{ MEDIA_URL }}{{ match.team_home.logo_icon.url }}"> {{ match.score_home }}:{{ match.score_away }} <img src="{{ MEDIA_URL }}{{ match.team_away.logo_icon.url }}"> {{ match.team_away }}</p>
-        </div>
+            {% if match.score_home != None and match.score_away != None %}
+            <div>
+                <p>{{ match.team_home }} <img src="{{ match.team_home.logo_icon.url }}"> {{ match.score_home }}:{{ match.score_away }} <img src="{{ match.team_away.logo_icon.url }}"> {{ match.team_away }}</p>
+            </div>
+            {% else %}
+            <div>
+                <p>{{ match.team_home }} <img src="{{ match.team_home.logo_icon.url }}"> -:- <img src="{{ match.team_away.logo_icon.url }}"> {{ match.team_away }}</p>
+            </div>
+            {% endif %}
         {% endfor %}
     </div>
 {% endfor %}

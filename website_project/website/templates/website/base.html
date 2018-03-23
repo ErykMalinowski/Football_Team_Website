@@ -54,7 +54,7 @@
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Sezon <span class="caret"></span></a>
                         <ul class="dropdown-menu dropdown">
                             <li><a href="{% url 'matches' %}">Terminarz i wyniki rozgrywek</a></li>
-                            <li><a href="#">Tabela</a></li>
+                            <li><a href="{% url 'table' %}">Tabela</a></li>
                             <li><a href="#">Statystyki zawodników</a></li>
                         </ul>
                     </li>
@@ -101,14 +101,34 @@
                 </div>
 
             </div>
-            <!--<div class="col-md-4 rightbar">-->
-                <!--<div>-->
-                <!--{% block table %}-->
+            {% block table %}
+            <div class="col-md-4">
+                <div class="table-responsive-md">
+                    <table class="table table-striped">
+                        <thead>
+                            <tr>
+                            <th>#</th>
+                            <th>Drużyna</th>
+                            <th>Mecze</th>
+                            <th>Punkty</th>
+                            </tr>
+                        </thead>
 
-                <!--{% endblock %}-->
-                <!--</div>-->
+                        {% for teamseason in teamseason_list %}
+                        <tbody>
+                            <tr>
+                                <td>{{ forloop.counter }}</td>
+                                <td><img src="{{ teamseason.team.logo_icon.url }}" /> {{ teamseason.team.name }}</td>
+                                <td>{{ teamseason.matches }}</td>
+                                <td>{{ teamseason.points }}</td>
+                            </tr>
+                        </tbody>
+                        {% endfor %}
 
-            <!--</div>-->
+                    </table>
+                </div>
+            </div>
+            {% endblock %}
         </div>
     </div>
 

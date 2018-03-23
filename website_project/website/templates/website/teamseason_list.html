@@ -1,0 +1,42 @@
+{% extends "website/base.html" %}
+{% block table %}
+{% endblock %}
+{% block content %}
+
+<h1 class="menu-h">Tabela rozgrywek</h1>
+
+<div class="table-responsive-md">
+    <table class="table table-striped">
+        <thead>
+            <tr>
+            <th>#</th>
+            <th>Drużyna</th>
+            <th>Mecze</th>
+            <th>Wygrane</th>
+            <th>Remisy</th>
+            <th>Porażki</th>
+            <th>Strzelone</th>
+            <th>Stracone</th>
+            <th>Punkty</th>
+            </tr>
+        </thead>
+
+        {% for teamseason in teamseason_list %}
+        <tbody>
+            <tr>
+                <td>{{ forloop.counter }}</td>
+                <td><img src="{{ teamseason.team.logo_icon.url }}" /> {{ teamseason.team.name }}</td>
+                <td>{{ teamseason.matches }}</td>
+                <td>{{ teamseason.wins }}</td>
+                <td>{{ teamseason.draws }}</td>
+                <td>{{ teamseason.losts }}</td>
+                <td>{{ teamseason.goals_for }}</td>
+                <td>{{ teamseason.goals_against }}</td>
+                <td>{{ teamseason.points }}</td>
+        </tbody>
+        {% endfor %}
+
+    </table>
+</div>
+
+{% endblock %}

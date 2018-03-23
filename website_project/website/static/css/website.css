@@ -163,16 +163,6 @@ p{
     margin-bottom: 10px;
 }
 
-.rightbar{
-    margin-top: 20px;
-    margin-left: 150px;
-    margin-right: -150px;
-    background-color: #082c50;
-    height: 100%;
-    font-family: 'Lato', sans-serif;
-    color: white;
-}
-
 .footer-style{
     background: #082c50;
     height: 60px;
@@ -201,6 +191,7 @@ p{
 .text-muted a img{
     margin-bottom: 5px;
 }
+
 
 
 

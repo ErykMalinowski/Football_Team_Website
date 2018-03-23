@@ -1,4 +1,5 @@
 from django.conf.urls import url
+
 from . import views
 
 
@@ -18,4 +19,6 @@ urlpatterns = [
     url(r'^comment/(?P<pk>\d+)/approve/$', views.approve_comment, name='approve_comment'),
     url(r'^comment/(?P<pk>\d+)/delete/$', views.delete_comment, name='delete_comment'),
     url(r'^matches/$', views.MatchesView.as_view(), name='matches'),
+    url(r'^reset-season/$', views.ResetTeamSeason.as_view()),
+    url(r'^table/$', views.TableView.as_view(), name='table'),
 ]

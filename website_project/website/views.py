@@ -1,11 +1,13 @@
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth.mixins import LoginRequiredMixin
+from django.http.response import HttpResponse
 from django.shortcuts import render, get_object_or_404, redirect
 from django.urls import reverse_lazy
 from django.utils import timezone
 from django.views.generic import TemplateView, ListView, DetailView, CreateView, UpdateView, DeleteView
+from django.views.generic.base import View
 
-from .models import Post, Comment, Player, Match
+from .models import Post, Comment, Player, Match, TeamSeason, Team, Season
 from .forms import PostForm, CommentForm
 
 
@@ -114,4 +116,32 @@ class MatchesView(ListView):
     model = Match
 
     def get_queryset(self):
-        return Match.objects.all()
+        return Match.objects.order_by('round__id', 'id')
+
+
+class ResetTeamSeason(View):
+    def get(self, request):
+        TeamSeason.objects.all().delete()
+
+        for season in Season.objects.all():
+            for team in Team.objects.all():
+                TeamSeason.objects.create(team=team,
+                                          season=season,
+                                          matches=0,
+                                          wins=0,
+                                          draws=0,
+                                          losts=0,
+                                          goals_for=0,
+                                          goals_against=0,
+                                          points=0
+                                          )
+        for match in Match.objects.all():
+            match.save()
+        return HttpResponse("OK")
+
+
+class TableView(ListView):
+    model = TeamSeason
+
+    def get_queryset(self):
+        return TeamSeason.objects.all().order_by('-points')
