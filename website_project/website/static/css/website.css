@@ -130,8 +130,8 @@ p{
     width: 70px;
     height: 70px;
     position: fixed;
-    bottom: 35px;
-    right: 35px;
+    bottom: 80px;
+    right: 80px;
     display: none;
 }
 
@@ -163,43 +163,47 @@ p{
     margin-bottom: 10px;
 }
 
-/*.rightbar{*/
-    /*margin-left: 75px;*/
-    /*margin-right: -75px;*/
-    /*background-color: #082c50;*/
-    /*height: 100%;*/
-    /*font-family: 'Lato', sans-serif;*/
-    /*color: white;*/
-/*}*/
+.rightbar{
+    margin-top: 20px;
+    margin-left: 150px;
+    margin-right: -150px;
+    background-color: #082c50;
+    height: 100%;
+    font-family: 'Lato', sans-serif;
+    color: white;
+}
 
-/*.footer-style {*/
-    /*position: absolute;*/
-    /*bottom: 0;*/
-    /*width: 100%;*/
-    /*!* Set the fixed height of the footer here *!*/
-    /*height: 60px;*/
-    /*line-height: 60px; !* Vertically center the text there *!*/
-    /*background-color: #d32f2f;*/
-/*}*/
+.footer-style{
+    background: #082c50;
+    height: 60px;
+    margin-top: 15px;
+}
 
-/*html{*/
-    /*position:relative;*/
-    /*min-height: 100%;*/
-/*}*/
+.text-muted{
+    font-family: 'Lato', sans-serif;
+    font-size: 1.5em;
+    word-spacing: 2px;
+    color: white;
+}
 
-/*.text-muted{*/
-    /*color: white;*/
-    /*font-family: 'Lato', sans-serif;*/
-    /*font-size: 1.25em;*/
-    /*letter-spacing: 1px;*/
-/*}*/
+.col-md-8{
+    margin-bottom: 100px;
+}
 
-/*.text-muted a{*/
-    /*margin-left: 2px;*/
-    /*margin-right: 2px;*/
-/*}*/
+.text-muted a{
+    margin-left: 10px;
+}
 
-/*.text-muted a img{*/
-    /*margin-bottom: 5px;*/
-/*}*/
+.github-color, .linkedin-color{
+    color: white;
+}
+
+.text-muted a img{
+    margin-bottom: 5px;
+}
+
+
+
+
+
 
