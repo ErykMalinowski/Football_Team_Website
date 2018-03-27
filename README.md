@@ -11,3 +11,5 @@ Main features:
 To-do:
 - show individual statistics of each player,
 - improve layout.
+
+Link to the website: http://erykmalinowski.pythonanywhere.com/
