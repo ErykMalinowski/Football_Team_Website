@@ -9,7 +9,6 @@ Main features:
 - presenting basic information about the club.
 
 To-do:
-- show individual statistics of each player,
-- improve layout.
+- show individual statistics of each player.
 
 Link to the website: http://erykmalinowski.pythonanywhere.com/

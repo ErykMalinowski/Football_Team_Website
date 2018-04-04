@@ -1,17 +1,17 @@
 {% extends "website/base.html" %}
 {% block content %}
 
-<h1>Nowy komentarz</h1>
+<h2>Nowy komentarz</h2>
 
 <form method="POST" class="post-form">
     {% csrf_token %}
     {{form.as_p}}
-    <button type="submit" class="btn btn-default">Dodaj komentarz</button>
+    <button type="submit" class="btn btn-default btn-comment-publish">Dodaj komentarz</button>
 </form>
 
 <script>var editor = new MediumEditor('.editable', {
     placeholder: {
-        text: 'Kliknij i wpisz, co chcesz!',
+        text: 'Kliknij i wpisz, co chcesz! (wskazówka -> zaznaczając tekst, możesz go edytować)',
         hideOnClick: true
     }
 });</script>

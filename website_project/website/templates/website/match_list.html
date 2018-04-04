@@ -5,8 +5,8 @@
 
 {% regroup match_list by round as rounds %}
 {% for round in rounds %}
-    <h2>{{ round.grouper.name }}</h2>
-    <div class="post matches">
+    <h3>{{ round.grouper.name }}</h3>
+    <div class="post">
         {% for match in round.list %}
             {% if match.score_home != None and match.score_away != None %}
             <div>

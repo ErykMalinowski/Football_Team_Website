@@ -103,8 +103,18 @@
             </div>
             {% block table %}
             <div class="col-md-4">
+                <div class="match-info">
+                    <p>Ostatni mecz</p>
+                    <p><img src="{% static 'img/logo_info_jutrzenka_ceglow.png' %}" alt="logo1">0:0<img src="{% static 'img/logo_info_grodzisk_krzymosze.jpg' %}" alt="logo2"></p>
+                    <hr>
+                    <p>Następny mecz</p>
+                    <p><img src="{% static 'img/logo_info_ostrowek.jpg' %}" alt="logo1">-:-<img src="{% static 'img/logo_info_jutrzenka_ceglow.png' %}" alt="logo2"></p>
+                    <p class="match-info-date">8 kwietnia 2018r., godz. 17:00, Ostrówek</p>
+                </div>
+
                 <div class="table-responsive-md">
-                    <table class="table table-striped">
+                    <table class="table">
+                        <p class="table-title">Tabela rozgrywek</p>
                         <thead>
                             <tr>
                             <th>#</th>
