@@ -7,7 +7,7 @@ from django.utils import timezone
 from django.views.generic import TemplateView, ListView, DetailView, CreateView, UpdateView, DeleteView
 from django.views.generic.base import View
 
-from .models import Post, Comment, Player, Match, TeamSeason, Team, Season
+from .models import Post, Comment, Player, Match, TeamSeason, Team, Season, PlayerStats
 from .forms import PostForm, CommentForm
 
 
@@ -145,3 +145,10 @@ class TableView(ListView):
 
     def get_queryset(self):
         return TeamSeason.objects.all().order_by('-points')
+
+
+class StatsView(ListView):
+    model = PlayerStats
+
+    def get_queryset(self):
+        return PlayerStats.objects.all().order_by('player__number')

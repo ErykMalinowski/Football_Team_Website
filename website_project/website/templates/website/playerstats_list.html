@@ -1,0 +1,81 @@
+{% extends "website/base.html" %}
+{% block content %}
+{% load staticfiles %}
+
+<h2 class="menu-h">Statystyki zawodników</h2>
+
+<div class="table-responsive-md">
+    <table class="table">
+        <thead>
+            <tr>
+            <th>Nr</th>
+            <th>Zawodnik</th>
+            <th>Mecze</th>
+            <th>Stracone bramki</th>
+            <th>Czyste konta</th>
+            <th><img src="{% static 'img/yellow-icon.png' %}" alt="yellow card icon"></th>
+            <th><img src="{% static 'img/red-icon.png' %}" alt="red card icon"></th>
+            <th><img src="{% static 'img/minutes-icon.png' %}" alt="minutes icon"></th>
+            </tr>
+        </thead>
+
+        {% for playerstats in playerstats_list %}
+            {% if playerstats.player.position == 'bramkarz' %}
+                <tbody>
+                    <tr>
+                        <td>{{ playerstats.player.number }}</td>
+                        <td>{{ playerstats.player.name }} {{ playerstats.player.surname }}</td>
+                        <td>{{ playerstats.appearances }}</td>
+                        <td>{{ playerstats.conceded }}</td>
+                        <td>{{ playerstats.clean_sheets }}</td>
+                        <td>{{ playerstats.yellow_cards }}</td>
+                        <td>{{ playerstats.red_cards }}</td>
+                        <td>{{ playerstats.minutes }}</td>
+                </tbody>
+            {% endif %}
+        {% endfor %}
+
+    </table>
+</div>
+
+<h6 class="menu-h"><u>Legenda:</u></h6>
+<h6><em>Nagłówki kolumn oznaczają kolejno: numer zawodnika, dane zawodnika, rozegrane mecze, wpuszczone bramki, zachowane czyste konta, żółte kartki, czerwone kartki, rozegrane minuty.</em></h6>
+
+<div class="table-responsive-md">
+    <table class="table">
+        <thead>
+            <tr>
+            <th>Nr</th>
+            <th>Zawodnik</th>
+            <th>Mecze</th>
+            <th><img src="{% static 'img/goal-icon.png' %}" alt="goal icon"></th>
+            <th><img src="{% static 'img/assist-icon.png' %}" alt="assist icon"></th>
+            <th><img src="{% static 'img/yellow-icon.png' %}" alt="yellow card icon"></th>
+            <th><img src="{% static 'img/red-icon.png' %}" alt="red card icon"></th>
+            <th><img src="{% static 'img/minutes-icon.png' %}" alt="minutes icon"></th>
+            </tr>
+        </thead>
+
+        {% for playerstats in playerstats_list %}
+            {% if playerstats.player.position != 'bramkarz' %}
+                <tbody>
+                    <tr>
+                        <td>{{ playerstats.player.number }}</td>
+                        <td>{{ playerstats.player.name }} {{ playerstats.player.surname }}</td>
+                        <td>{{ playerstats.appearances }}</td>
+                        <td>{{ playerstats.goals }}</td>
+                        <td>{{ playerstats.assists }}</td>
+                        <td>{{ playerstats.yellow_cards }}</td>
+                        <td>{{ playerstats.red_cards }}</td>
+                        <td>{{ playerstats.minutes }}</td>
+                </tbody>
+            {% endif %}
+        {% endfor %}
+
+    </table>
+</div>
+
+<h6 class="menu-h"><u>Legenda:</u></h6>
+<h6><em>Nagłówki kolumn oznaczają kolejno: numer zawodnika, dane zawodnika, rozegrane mecze, strzelone bramki, zanotowane asysty, żółte kartki, czerwone kartki, rozegrane minuty.</em></h6>
+
+{% endblock %}

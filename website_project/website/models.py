@@ -153,3 +153,6 @@ class PlayerStats(models.Model):
     red_cards = models.PositiveSmallIntegerField(null=True)
     minutes = models.PositiveSmallIntegerField(null=True)
     player = models.ForeignKey(Player, on_delete=models.CASCADE)
+
+    def __str__(self):
+        return self.player.name + " " + self.player.surname

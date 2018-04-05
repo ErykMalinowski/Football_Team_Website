@@ -21,4 +21,5 @@ urlpatterns = [
     url(r'^matches/$', views.MatchesView.as_view(), name='matches'),
     url(r'^reset-season/$', views.ResetTeamSeason.as_view()),
     url(r'^table/$', views.TableView.as_view(), name='table'),
+    url(r'^stats/$', views.StatsView.as_view(), name='stats'),
 ]
