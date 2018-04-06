@@ -35,18 +35,17 @@
 {% for comment in post.comments.all %}
 <br>
     {% if user.is_authenticated or comment.approved_comment %}
-        {{ comment.created_date }}
+        <h5 class="menu-h">Dodał: {{ comment.author }}</h5>
+        <h6><em>{{ comment.created_date }}</em></h6>
+        <p>{{ comment.text|safe|linebreaks }}</p>
     {% if not comment.approved_comment %}
         <a class="btn btn-default" href="{% url 'delete_comment' pk=comment.pk %}"><span class="glyphicon glyphicon-remove"></span></a>
         <a class="btn btn-default" href="{% url 'approve_comment' pk=comment.pk %}"><span class="glyphicon glyphicon-ok"></span></a>
     {% endif %}
 
-    <p>{{ comment.text|safe|linebreaks }}</p>
-    <p>Dodał: <strong>{{ comment.author }}</strong></p>
-
     {% endif %}
 {% empty %}
-    <p>Brak komentarzy</p>
+    <p class="menu-h">Brak komentarzy</p>
 {% endfor %}
 </div>
 

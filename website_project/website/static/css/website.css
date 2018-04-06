@@ -1,3 +1,8 @@
+body{
+    font-family: 'Lato', sans-serif;
+    /*background-color: #082c50;*/
+}
+
 .menu{
     font-family: 'Lato', sans-serif;
     font-size: 1.5em;
@@ -219,7 +224,7 @@ p{
 }
 
 .table-responsive-md{
-    margin-top: 50px;
+    margin-top: 30px;
 }
 
 .col-md-4{
@@ -227,13 +232,13 @@ p{
     margin-right: -50px;
 }
 
-.match-info{
+.match-info, .sponsors{
     font-family: 'Lato', sans-serif;
     font-size: 2.75em;
     font-weight: 700;
 }
 
-.match-info p{
+.match-info p, .sponsors p, .fanpage p{
     text-align: center;
 }
 
@@ -245,11 +250,6 @@ p.match-info-date{
     font-size: 0.5em;
 }
 
-hr{
-    background-color: #000;
-    height: 3px;
-}
-
 .table-title{
     font-family: 'Lato', sans-serif;
     font-size: 2em;
@@ -259,4 +259,12 @@ hr{
 
 .table{
     font-family: 'Lato', sans-serif;
+}
+
+.fanpage:hover{
+    opacity: 0.8;
+}
+
+.sponsors p a:hover{
+    opacity: 0.8;
 }
