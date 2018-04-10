@@ -11,13 +11,12 @@
             <tr>
             <th>#</th>
             <th>Drużyna</th>
-            <th>Mecze</th>
-            <th>Wygrane</th>
-            <th>Remisy</th>
-            <th>Porażki</th>
-            <th>Strzelone</th>
-            <th>Stracone</th>
-            <th>Punkty</th>
+            <th>M</th>
+            <th>Z</th>
+            <th>R</th>
+            <th>P</th>
+            <th>Bramki</th>
+            <th>Pkt</th>
             </tr>
         </thead>
 
@@ -30,13 +29,16 @@
                 <td>{{ teamseason.wins }}</td>
                 <td>{{ teamseason.draws }}</td>
                 <td>{{ teamseason.losts }}</td>
-                <td>{{ teamseason.goals_for }}</td>
-                <td>{{ teamseason.goals_against }}</td>
+                <td>{{ teamseason.goals_for }}:{{ teamseason.goals_against }}</td>
                 <td>{{ teamseason.points }}</td>
         </tbody>
         {% endfor %}
 
     </table>
 </div>
+
+<h6 class="menu-h"><u>Legenda:</u></h6>
+<h6><em>Nagłówki kolumn oznaczają kolejno: pozycję drużyny, nazwę drużyny, rozegrane mecze, zwycięstwa, remisy, porażki, stosunek bramek strzelonych do straconych, zdobyte punkty.</em></h6>
+
 
 {% endblock %}

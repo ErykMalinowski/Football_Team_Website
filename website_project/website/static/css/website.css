@@ -1,6 +1,7 @@
 body{
     font-family: 'Lato', sans-serif;
-    /*background-color: #082c50;*/
+    background-color: #082c50;
+    color: #fff;
 }
 
 .menu{
@@ -13,11 +14,12 @@ body{
 
 .navbar-default .navbar-nav>li>a {
     color: #fff;
+    font-weight: 700;
     letter-spacing: 1px;
 }
 
 .navbar-default .navbar-nav>li>a:hover{
-    color: #ccc;
+    color: #ddd;
 }
 
 .nav>li:hover{
@@ -26,7 +28,8 @@ body{
 }
 
 .dropdown>li{
-    background-color: #082c50;
+    /*background-color: #082c50; */
+    background-color: #d32f2f;
     color: #fff;
 }
 
@@ -40,17 +43,20 @@ body{
 }
 
 .dropdown-menu>li>a:hover {
-    color: #ccc;
-    background: #193d61;
+    color: #ddd;
+    /*background: #193d61; */
+    background: #e43030;
 }
 
 .dropdown-menu>li>a {
     padding: 10px 20px;
     color: #fff;
+    font-weight: 700;
+    letter-spacing: 1px;
 }
 
 .dropdown-menu>li>a:hover {
-    color: #ccc;
+    color: #ddd;
 }
 
 .navbar-default .navbar-nav > .open > a,
@@ -64,7 +70,11 @@ body{
 .navbar-default .navbar-nav>.open>a:focus,
 .navbar-default .navbar-nav>.open>a:hover
 {
-    color: #ccc;
+    color: #ddd;
+}
+
+.navbar{
+    border: 0;
 }
 
 .navbar-default .navbar-toggle{
@@ -85,7 +95,7 @@ body{
         color: #fff;
     }
     .navbar-default .navbar-nav .open .dropdown-menu>li>a:hover{
-        color: #ccc;
+        color: #ddd;
     }
 }
 
@@ -103,15 +113,25 @@ body{
 
 .post a{
     text-decoration: none;
-    color: #000;
+    color: #fff;
+}
+
+.post a:hover{
+    color: #ddd;
 }
 
 .post h1{
     font-weight: 700;
+    color: #fff;
+}
+
+h2, h3{
+    color: #fff;
 }
 
 p{
     text-align: justify;
+    color: #fff;
 }
 
 .date {
@@ -128,7 +148,7 @@ p{
     position: absolute;
     right: 0;
     background-image: none;
-    background-color: #082c50;
+    background-color: #d32f2f;
 }
 
 .btn-comment-publish{
@@ -140,6 +160,38 @@ p{
     /*background-color: #082c50;*/
 }
 
+.btn-primary:focus, .btn-primary:hover{
+    background-color: #e43030;
+}
+
+.btn-comment-publish{
+    background-image: none;
+    background-color: #d32f2f;
+    color: white;
+    border: 0;
+    letter-spacing: 1px;
+}
+
+.btn-comment-publish:hover{
+    background-color: #e43030;
+    color: white;
+    letter-spacing: 1px;
+}
+
+input{
+    background-color: #082c50;
+    border: blue;
+}
+
+.medium-editor-toolbar ul{
+    color: #000;
+}
+
+#id_author{
+    background-color: #fff;
+    color: #000;
+}
+
 .page-header{
     font-family: 'Lato', sans-serif;
     text-align: center;
@@ -149,8 +201,13 @@ p{
 
 .page-header a{
     text-decoration: none;
-    color: #000;
+    color: #fff;
 }
+
+.page-header a:hover{
+    opacity: 0.8;
+}
+
 
 .page-header h1{
     font-weight: 700;
@@ -182,12 +239,17 @@ p{
     margin-bottom: 10px;
     word-spacing: 5px;
     text-align: center;
-    margin-left: 100px;
 }
 
-.squad-h1, .squad-h2{
+.squad-h1{
     font-weight: 700;
     text-align: center;
+}
+
+.squad-h2{
+    font-weight: 700;
+    text-align: center;
+    margin-bottom: 25px;
 }
 
 .matches{
@@ -195,9 +257,11 @@ p{
 }
 
 .footer-style{
-    background: #082c50;
+    background: #d32f2f;
     /*height: 60px;*/
     margin-top: 10px;
+    font-weight: 700;
+    letter-spacing: 1px;
 }
 
 .text-muted{
@@ -220,22 +284,23 @@ p{
 }
 
 .text-muted a img{
-    margin-bottom: 5px;
+    margin-bottom: 7px;
+}
+
+.text-muted a img:hover{
+    opacity: 0.9;
 }
 
 .table-responsive-md{
     margin-top: 30px;
+    font-weight: 700;
 }
 
-.col-md-4{
-    margin-left: 50px;
-    margin-right: -50px;
-}
-
-.match-info, .sponsors{
+.match-info{
     font-family: 'Lato', sans-serif;
     font-size: 2.75em;
     font-weight: 700;
+    padding-top: 25px;
 }
 
 .match-info p, .sponsors p, .fanpage p{
@@ -261,10 +326,81 @@ p.match-info-date{
     font-family: 'Lato', sans-serif;
 }
 
-.fanpage:hover{
+.fanpage-icon{
+    background-color: #3b5998;
+    padding: 10px 0;
+    margin-top: -20px;
+    margin-bottom: 0;
+}
+
+.fanpage{
+    background-color: #082c50;
+    /*background-color: #5d7bba;*/
+    padding-top: 80px;
+}
+
+.fanpage-icon:hover{
     opacity: 0.8;
 }
 
-.sponsors p a:hover{
+.sponsors{
+    font-family: 'Lato', sans-serif;
+    font-size: 2.75em;
+    font-weight: 700;
+    background-color: #082c50;
+}
+
+.sponsors-header{
+    background-color: #082c50;
+    padding-top: 60px;
+    padding-bottom: 20px;
+    margin-bottom: 0;
+}
+
+.gmina-icon{
+    background-color: #fff;
+    margin-bottom: 1px;
+}
+
+.bags-icon{
+    background-color: #fff;
+    margin-bottom: 0;
+
+}
+
+.autopex-icon{
+    background-color: #000;
+    margin-bottom: 0;
+}
+
+.sponsors a p.gmina-icon:hover, .sponsors a p.bags-icon:hover{
+    opacity: 0.9;
+}
+
+.sponsors a p.autopex-icon:hover{
     opacity: 0.8;
+}
+
+.fab{
+    color: #fff;
+}
+
+.fab:hover{
+    color: #ddd;
+}
+
+.col-md-4{
+    background-color: #d32f2f;
+    margin-top: 30px;
+    padding-left: 0;
+    padding-right: 0;
+}
+
+.col-md-7{
+    padding-left: 5px;
+    padding-right: 5px;
+}
+
+hr{
+    border-top: 0;
 }
