@@ -1,6 +1,7 @@
 body{
     font-family: 'Lato', sans-serif;
-    background-color: #082c50;
+    /*background-color: #082c50;*/
+    background-color: #011f4b;
     color: #fff;
 }
 
@@ -9,7 +10,8 @@ body{
     font-size: 1.5em;
     /*color: #fff;*/
     background-image: none;
-    background-color: #d32f2f;
+    /*background-color: #d32f2f;*/
+    background-color: #d61313;
 }
 
 .navbar-default .navbar-nav>li>a {
@@ -23,13 +25,15 @@ body{
 }
 
 .nav>li:hover{
-    background-color: #e43030;
+    /*background-color: #e43030;*/
+    background-color: #e72424;
     color: #fff;
 }
 
 .dropdown>li{
     /*background-color: #082c50; */
-    background-color: #d32f2f;
+    /*background-color: #d32f2f;*/
+    background-color: #d61313;
     color: #fff;
 }
 
@@ -45,7 +49,8 @@ body{
 .dropdown-menu>li>a:hover {
     color: #ddd;
     /*background: #193d61; */
-    background: #e43030;
+    /*background: #e43030;*/
+    background: #e72424;
 }
 
 .dropdown-menu>li>a {
@@ -63,7 +68,8 @@ body{
 .navbar-default .navbar-nav > .open > a:hover,
 .navbar-default .navbar-nav > .dropdown.open > a
 {
-    background: #e43030;
+    /*background: #e43030;*/
+    background: #e72424;
 }
 
 .navbar-default .navbar-nav>.open>a,
@@ -78,7 +84,8 @@ body{
 }
 
 .navbar-default .navbar-toggle{
-    background-color: #082c50;
+    /*background-color: #082c50;*/
+    background-color: #011f4b;
     border: 0;
 }
 
@@ -87,7 +94,8 @@ body{
 }
 
 .navbar-default .navbar-toggle:focus, .navbar-default .navbar-toggle:hover{
-    background-color: #082c50;
+    /*background-color: #082c50;*/
+    background-color: #011f4b;
 }
 
 @media (max-width: 767px){
@@ -148,7 +156,8 @@ p{
     position: absolute;
     right: 0;
     background-image: none;
-    background-color: #d32f2f;
+    /*background-color: #d32f2f;*/
+    background-color: #d61313;
 }
 
 .btn-comment-publish{
@@ -161,25 +170,29 @@ p{
 }
 
 .btn-primary:focus, .btn-primary:hover{
-    background-color: #e43030;
+    /*background-color: #e43030;*/
+    background-color: #e72424;
 }
 
 .btn-comment-publish{
     background-image: none;
-    background-color: #d32f2f;
+    /*background-color: #d32f2f;*/
+    background-color: #d61313;
     color: white;
     border: 0;
     letter-spacing: 1px;
 }
 
 .btn-comment-publish:hover{
-    background-color: #e43030;
+    /*background-color: #e43030;*/
+    background-color: #e72424;
     color: white;
     letter-spacing: 1px;
 }
 
 input{
-    background-color: #082c50;
+    /*background-color: #082c50;*/
+    background-color: #011f4b;
     border: blue;
 }
 
@@ -257,7 +270,8 @@ input{
 }
 
 .footer-style{
-    background: #d32f2f;
+    /*background: #d32f2f;*/
+    background: #d61313;
     /*height: 60px;*/
     margin-top: 10px;
     font-weight: 700;
@@ -324,6 +338,7 @@ p.match-info-date{
 
 .table{
     font-family: 'Lato', sans-serif;
+    margin-bottom: 0;
 }
 
 .fanpage-icon{
@@ -334,7 +349,8 @@ p.match-info-date{
 }
 
 .fanpage{
-    background-color: #082c50;
+    /*background-color: #082c50;*/
+    background-color: #011f4b;
     /*background-color: #5d7bba;*/
     padding-top: 80px;
 }
@@ -347,11 +363,13 @@ p.match-info-date{
     font-family: 'Lato', sans-serif;
     font-size: 2.75em;
     font-weight: 700;
-    background-color: #082c50;
+    /*background-color: #082c50;*/
+    background-color: #011f4b;
 }
 
 .sponsors-header{
-    background-color: #082c50;
+    /*background-color: #082c50;*/
+    background-color: #011f4b;
     padding-top: 60px;
     padding-bottom: 20px;
     margin-bottom: 0;
@@ -390,7 +408,8 @@ p.match-info-date{
 }
 
 .col-md-4{
-    background-color: #d32f2f;
+    /*background-color: #d32f2f;*/
+    background-color: #d61313;
     margin-top: 30px;
     padding-left: 0;
     padding-right: 0;
