@@ -38,12 +38,18 @@
         <h5 class="menu-h">Dodał: {{ comment.author }}</h5>
         <h6><em>{{ comment.created_date }}</em></h6>
         <p>{{ comment.text|safe|linebreaks }}</p>
+    {% endif %}
+    {% if user.is_authenticated %}
+        <a class="btn btn-default" href="{% url 'edit_comment' pk=comment.pk %}"><span class="glyphicon glyphicon-pencil"></span></a>
+        <a class="btn btn-default" href="{% url 'delete_comment' pk=comment.pk %}"><span class="glyphicon glyphicon-remove"></span></a>
+    {% endif %}
+    {% comment %}
     {% if not comment.approved_comment %}
         <a class="btn btn-default" href="{% url 'delete_comment' pk=comment.pk %}"><span class="glyphicon glyphicon-remove"></span></a>
         <a class="btn btn-default" href="{% url 'approve_comment' pk=comment.pk %}"><span class="glyphicon glyphicon-ok"></span></a>
     {% endif %}
+    {% endcomment %}
 
-    {% endif %}
 {% empty %}
     <p class="menu-h">Brak komentarzy</p>
 {% endfor %}

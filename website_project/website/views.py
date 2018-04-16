@@ -72,17 +72,26 @@ def add_comment(request, pk):
             comment = form.save(commit=False)
             comment.post = post
             comment.save()
+            comment.approve()
             return redirect('post_detail', pk=post.pk)
     else:
         form = CommentForm()
     return render(request, 'website/comment_form.html', {'form': form})
 
 
-@login_required
-def approve_comment(request, pk):
-    comment = get_object_or_404(Comment, pk=pk)
-    comment.approve()
-    return redirect('post_detail', pk=comment.post.pk)
+# @login_required
+# def approve_comment(request, pk):
+#     comment = get_object_or_404(Comment, pk=pk)
+#     comment.approve()
+#     return redirect('post_detail', pk=comment.post.pk)
+
+class CommentEditView(LoginRequiredMixin, UpdateView):
+    login_url = '/login/'
+    redirect_field_name = 'website/post_detail.html'
+
+    form_class = CommentForm
+
+    model = Comment
 
 
 @login_required
