@@ -1,8 +1,12 @@
 <!DOCTYPE html>
 {% load staticfiles %}
-<html>
+<html lang="pl">
     <head>
+        <meta charset="UTF-8"/>
         <title>Jutrzenka Cegłów - oficjalna strona</title>
+        <meta name="description" content="Jutrzenka Cegłów - oficjalna strona drużyny piłkarskiej. Aktualności z klubu, wyniki meczów, tabele i statystyki. Zapraszamy do przeglądania i komentowania!"/>
+        <meta name="keywords" content="Jutrzenka, Cegłów, klub piłkarski, drużyna piłkarska"/>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
 
         <!-- Latest compiled and minified CSS -->
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
@@ -28,154 +32,154 @@
         <link rel="shortcut icon" href="{% static 'img/jutrzenka_icon.ico' %}" type="image/x-icon">
         <!-- Fonts -->
         <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet">
+    </head>
 
+    <body>
+        <div class="page-header">
+            <h1><a href="{% url 'post_list' %}"><img src="{% static 'img/jutrzenka.png' %}" alt="logo"> Jutrzenka Cegłów</a></h1>
+        </div>
 
-<body>
-    <div class="page-header">
-        <h1><a href="{% url 'post_list' %}"><img src="{% static 'img/jutrzenka.png' %}" alt="logo"> Jutrzenka Cegłów</a></h1>
-    </div>
+        <nav class="navbar navbar-default menu">
+            <div class="container">
+            <!-- Brand and toggle get grouped for better mobile display -->
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                </div>
 
-    <nav class="navbar navbar-default menu">
-        <div class="container">
-        <!-- Brand and toggle get grouped for better mobile display -->
-            <div class="navbar-header">
-                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
-                    <span class="sr-only">Toggle navigation</span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                </button>
-            </div>
+            <!-- Collect the nav links, forms, and other content for toggling -->
+                <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                    <ul class="nav navbar-nav">
+                        <li><a href="{% url 'post_list' %}">Strona główna</a></li>
+                        <li><a href="{% url 'squad' %}">Kadra</a></li>
+                        <li class="dropdown">
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Sezon <span class="caret"></span></a>
+                            <ul class="dropdown-menu dropdown">
+                                <li><a href="{% url 'matches' %}">Terminarz i wyniki rozgrywek</a></li>
+                                <li><a href="{% url 'table' %}">Tabela</a></li>
+                                <li><a href="{% url 'stats' %}">Statystyki zawodników</a></li>
+                            </ul>
+                        </li>
+                        <li><a href="{% url 'gallery' %}">Galeria</a></li>
+                        <li><a href="{% url 'about' %}">O klubie</a></li>
+                        <li><a href="{% url 'contact' %}">Kontakt</a></li>
+                    </ul>
 
-        <!-- Collect the nav links, forms, and other content for toggling -->
-            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-                <ul class="nav navbar-nav">
-                    <li><a href="{% url 'post_list' %}">Strona główna</a></li>
-                    <li><a href="{% url 'squad' %}">Kadra</a></li>
-                    <li class="dropdown">
-                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Sezon <span class="caret"></span></a>
-                        <ul class="dropdown-menu dropdown">
-                            <li><a href="{% url 'matches' %}">Terminarz i wyniki rozgrywek</a></li>
-                            <li><a href="{% url 'table' %}">Tabela</a></li>
-                            <li><a href="{% url 'stats' %}">Statystyki zawodników</a></li>
-                        </ul>
-                    </li>
-                    <li><a href="{% url 'gallery' %}">Galeria</a></li>
-                    <li><a href="{% url 'about' %}">O klubie</a></li>
-                    <li><a href="{% url 'contact' %}">Kontakt</a></li>
-                </ul>
+                    <ul class="nav navbar-nav navbar-right">
+                    {% if user.is_authenticated %}
+                        <li>
+                            <a>Witaj, {{ user.username }}!</a>
+                        </li>
+                        <li>
+                            <a href="{% url 'post_new' %}" >Nowy post</a>
+                        </li>
+                        <li>
+                            <a href="{% url 'post_draft_list' %}">Wersje robocze</a>
+                        </li>
+                        <li>
+                            <a href="{% url 'logout' %}" >Wyloguj się</a>
+                        </li>
+                    {% comment %}{% else %}
+                        <li>
+                          <a class='nav navbar-right' href="{% url 'login' %}">
+                              <span class="glyphicon glyphicon-user"></span>
+                          </a>
+                        </li>
+                    {% endcomment %}
+                    {% endif %}
 
-                <ul class="nav navbar-nav navbar-right">
-                {% if user.is_authenticated %}
-                    <li>
-                        <a>Witaj, {{ user.username }}!</a>
-                    </li>
-                    <li>
-                        <a href="{% url 'post_new' %}" >Nowy post</a>
-                    </li>
-                    <li>
-                        <a href="{% url 'post_draft_list' %}">Wersje robocze</a>
-                    </li>
-                    <li>
-                        <a href="{% url 'logout' %}" >Wyloguj się</a>
-                    </li>
-                {% comment %}{% else %}
-                    <li>
-                      <a class='nav navbar-right' href="{% url 'login' %}">
-                          <span class="glyphicon glyphicon-user"></span>
-                      </a>
-                    </li>
-                {% endcomment %}
-                {% endif %}
+                    </ul>
+                </div><!-- /.navbar-collapse -->
+            </div><!-- /.container-fluid -->
+        </nav>
 
-                </ul>
-            </div><!-- /.navbar-collapse -->
-        </div><!-- /.container-fluid -->
-    </nav>
+        <div class="content container">
+            <div class="row">
+                <div class="col-md-7">
+                    <div>
+                    {% block content %}
 
-    <div class="content container">
-        <div class="row">
-            <div class="col-md-7">
-                <div>
-                {% block content %}
+                    {% endblock %}
+                    </div>
 
+                </div>
+                <div class="col-md-1">
+
+                </div>
+
+                <div class="col-md-4">
+                    <div class="match-info">
+                        <p>Ostatni mecz</p>
+                        <p><img src="{% static 'img/info_logo_ostrowek.png' %}" alt="logo1">2:0<img src="{% static 'img/info_logo_jutrzenka_ceglow.png' %}" alt="logo2"></p>
+                        <p class="match-info-date">8 kwietnia 2018r., godz. 17:00, Ostrówek</p><hr>
+                        <p>Następny mecz</p>
+                        <p><img src="{% static 'img/info_logo_jutrzenka_ceglow.png' %}" alt="logo1">-:-<img src="{% static 'img/info_logo_kosovia_kosow_lacki.png' %}" alt="logo2"></p>
+                        <p class="match-info-date">15 kwietnia 2018r., godz. 15:30, Cegłów</p>
+                        <hr>
+                    </div>
+                {% block table %}
+                    <div class="table-responsive-md">
+                        <table class="table">
+                            <p class="table-title">Tabela rozgrywek</p>
+                            <thead>
+                                <tr>
+                                <th>#</th>
+                                <th>Drużyna</th>
+                                <th>Mecze</th>
+                                <th>Punkty</th>
+                                </tr>
+                            </thead>
+
+                            {% for teamseason in teamseason_list %}
+                            <tbody>
+                                <tr>
+                                    <td>{{ forloop.counter }}</td>
+                                    <td><img src="{{ teamseason.team.logo_icon.url }}" /> {{ teamseason.team.name }}</td>
+                                    <td>{{ teamseason.matches }}</td>
+                                    <td>{{ teamseason.points }}</td>
+                                </tr>
+                            </tbody>
+                            {% endfor %}
+
+                        </table>
+                    </div>
                 {% endblock %}
+                    <div class="fanpage">
+                        <a href="https://www.facebook.com/KS-Jutrzenka-Ceg%C5%82%C3%B3w-282845598403885/" target="_blank"><p class="fanpage-icon"><img src="{% static 'img/fb.PNG' %}" alt="fanpage"></p></a>
+                        <!--<hr>-->
+                    </div>
+
+                    <div class="sponsors">
+                        <p class="sponsors-header">Sponsorzy:</p>
+                        <a href="https://ceglow.pl/" target="_blank"><p class="gmina-icon"><img src="{% static 'img/gmina.PNG' %}" alt="gmina"></p></a>
+                        <a href="http://www.bags.com.pl/" target="_blank"><p class="bags-icon"><img src="{% static 'img/bags.PNG' %}" alt="bags"></p></a>
+                        <a href="https://panoramafirm.pl/mazowieckie,mi%C5%84ski,ceg%C5%82%C3%B3w,orzeszkowej,8/autopex_lukasz_pernach_mechanika_pojazdowa-aiwdob_prt.html" target="_blank"><p class="autopex-icon"><img src="{% static 'img/autopex.PNG' %}" alt="autopex"></p></a>
+                    </div>
+
                 </div>
 
             </div>
-            <div class="col-md-1">
-
-            </div>
-
-            <div class="col-md-4">
-                <div class="match-info">
-                    <p>Ostatni mecz</p>
-                    <p><img src="{% static 'img/info_logo_ostrowek.png' %}" alt="logo1">2:0<img src="{% static 'img/info_logo_jutrzenka_ceglow.png' %}" alt="logo2"></p>
-                    <p class="match-info-date">8 kwietnia 2018r., godz. 17:00, Ostrówek</p><hr>
-                    <p>Następny mecz</p>
-                    <p><img src="{% static 'img/info_logo_jutrzenka_ceglow.png' %}" alt="logo1">-:-<img src="{% static 'img/info_logo_kosovia_kosow_lacki.png' %}" alt="logo2"></p>
-                    <p class="match-info-date">15 kwietnia 2018r., godz. 15:30, Cegłów</p>
-                    <hr>
-                </div>
-            {% block table %}
-                <div class="table-responsive-md">
-                    <table class="table">
-                        <p class="table-title">Tabela rozgrywek</p>
-                        <thead>
-                            <tr>
-                            <th>#</th>
-                            <th>Drużyna</th>
-                            <th>Mecze</th>
-                            <th>Punkty</th>
-                            </tr>
-                        </thead>
-
-                        {% for teamseason in teamseason_list %}
-                        <tbody>
-                            <tr>
-                                <td>{{ forloop.counter }}</td>
-                                <td><img src="{{ teamseason.team.logo_icon.url }}" /> {{ teamseason.team.name }}</td>
-                                <td>{{ teamseason.matches }}</td>
-                                <td>{{ teamseason.points }}</td>
-                            </tr>
-                        </tbody>
-                        {% endfor %}
-
-                    </table>
-                </div>
-            {% endblock %}
-                <div class="fanpage">
-                    <a href="https://www.facebook.com/KS-Jutrzenka-Ceg%C5%82%C3%B3w-282845598403885/" target="_blank"><p class="fanpage-icon"><img src="{% static 'img/fb.PNG' %}" alt="fanpage"></p></a>
-                    <!--<hr>-->
-                </div>
-
-                <div class="sponsors">
-                    <p class="sponsors-header">Sponsorzy:</p>
-                    <a href="https://ceglow.pl/" target="_blank"><p class="gmina-icon"><img src="{% static 'img/gmina.PNG' %}" alt="gmina"></p></a>
-                    <a href="http://www.bags.com.pl/" target="_blank"><p class="bags-icon"><img src="{% static 'img/bags.PNG' %}" alt="bags"></p></a>
-                    <a href="https://panoramafirm.pl/mazowieckie,mi%C5%84ski,ceg%C5%82%C3%B3w,orzeszkowej,8/autopex_lukasz_pernach_mechanika_pojazdowa-aiwdob_prt.html" target="_blank"><p class="autopex-icon"><img src="{% static 'img/autopex.PNG' %}" alt="autopex"></p></a>
-                </div>
-
-            </div>
-
         </div>
-    </div>
 
-    <nav class="navbar navbar-default navbar-fixed-bottom footer-style">
-        <div class="container footer-style">
-            <span class="text-muted">jutrzenkaceglow.pl &copy; 2018 Wszelkie prawa zastrzeżone. Projekt i realizacja: Eryk Malinowski
-                <a href="https://github.com/ErykMalinowski" target="_blank"><i class="fab fa-github fa-lg github-color"></i></a>
-                <a href="https://www.linkedin.com/in/eryk-malinowski/" target="_blank"><i class="fab fa-linkedin fa-lg linkedin-color"></i></a>
-                <a href="https://www.codewars.com/users/ErykMalinowski" target="_blank"><img src="{% static 'img/codewars_logo.png' %}"></a>
-            </span>
-        </div>
-    </nav>
-
-
-<a href="#"><img src="{% static 'img/up_icon.png' %}" class="scroll-top"></a>
+        <nav class="navbar navbar-default navbar-fixed-bottom footer-style">
+            <div class="container footer-style">
+                <span class="text-muted">jutrzenkaceglow.pl &copy; 2018 Wszelkie prawa zastrzeżone. Projekt i realizacja: Eryk Malinowski
+                    <a href="https://github.com/ErykMalinowski" target="_blank"><i class="fab fa-github fa-lg github-color"></i></a>
+                    <a href="https://www.linkedin.com/in/eryk-malinowski/" target="_blank"><i class="fab fa-linkedin fa-lg linkedin-color"></i></a>
+                    <a href="https://www.codewars.com/users/ErykMalinowski" target="_blank"><img src="{% static 'img/codewars_logo.png' %}"></a>
+                </span>
+            </div>
+        </nav>
 
 
-<script type="text/javascript" src="{% static 'js/website.js' %}"></script>
+    <a href="#"><img src="{% static 'img/up_icon.png' %}" class="scroll-top"></a>
 
-</body>
+
+    <script type="text/javascript" src="{% static 'js/website.js' %}"></script>
+
+    </body>
 </html>
