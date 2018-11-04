@@ -1,6 +1,6 @@
 # Football_Team_Website
 
-Final project for Coderslab Bootcamp. Website of non-professional football team - Jutrzenka Cegłów.
+Final project for Coders Lab Programming Bootcamp. Website of non-professional football team - Jutrzenka Cegłów.
 
 Main features:
 - publishing articles and adding comments to them,
